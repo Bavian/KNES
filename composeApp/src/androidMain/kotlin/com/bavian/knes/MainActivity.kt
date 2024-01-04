@@ -6,13 +6,18 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import com.bavian.knes.platform.Greeting
+import org.koin.android.ext.android.inject
 
 class MainActivity : ComponentActivity() {
+
+    private val greeting by inject<Greeting>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContent {
-            App()
+            App(greeting.greet)
         }
     }
 }
@@ -20,5 +25,5 @@ class MainActivity : ComponentActivity() {
 @Preview
 @Composable
 fun AppAndroidPreview() {
-    App()
+    App("Hello, Android Preview")
 }
