@@ -18,6 +18,11 @@ kotlin {
 
     jvm("desktop")
 
+    js(IR) {
+        browser {}
+        binaries.executable()
+    }
+
     sourceSets {
         val desktopMain by getting
 
@@ -40,6 +45,12 @@ kotlin {
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
+        }
+        jsMain.dependencies {
+            implementation(compose.runtime)
+            implementation(compose.html.core)
+
+            implementation(libs.koin.core)
         }
     }
 }
