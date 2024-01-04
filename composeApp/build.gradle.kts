@@ -32,6 +32,7 @@ kotlin {
 
             implementation(libs.koin.android)
             implementation(libs.koin.android.compat)
+            implementation(libs.kotlinx.coroutines.android)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -42,15 +43,18 @@ kotlin {
             implementation(compose.components.resources)
 
             implementation(libs.koin.core)
+            implementation(libs.kotlinx.coroutines.core)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
+            implementation(libs.kotlinx.coroutines.core.jvm)
         }
         jsMain.dependencies {
             implementation(compose.runtime)
             implementation(compose.html.core)
 
             implementation(libs.koin.core)
+            implementation(libs.kotlinx.coroutines.core.js)
         }
     }
 }
