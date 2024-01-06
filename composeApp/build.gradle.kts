@@ -44,6 +44,9 @@ kotlin {
 
             implementation(libs.koin.core)
             implementation(libs.kotlinx.coroutines.core)
+
+            implementation(project(":core-utils-api"))
+            implementation(project(":core-utils-impl"))
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
