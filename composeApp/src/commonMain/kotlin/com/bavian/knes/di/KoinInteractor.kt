@@ -1,5 +1,6 @@
 package com.bavian.knes.di
 
+import com.bavian.knes.core.utils.impl.di.CoreUtilsModule
 import org.koin.core.KoinApplication
 import org.koin.core.context.startKoin
 import org.koin.core.module.Module
@@ -13,6 +14,7 @@ object KoinInteractor {
         modules(
             appModule,
             platformModule,
+            CoreUtilsModule(),
         )
     }
 }
