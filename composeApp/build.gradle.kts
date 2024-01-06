@@ -47,6 +47,9 @@ kotlin {
 
             implementation(project(":core-utils-api"))
             implementation(project(":core-utils-impl"))
+
+            implementation(project(":emulator:api"))
+            implementation(project(":emulator:impl"))
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
