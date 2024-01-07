@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.androidLibrary)
 }
 
-val emulatorNamespace = "com.bavian.knes.emulator.impl"
+val emulatorNamespace = "com.bavian.knes.emulator.memory.api"
 
 group = emulatorNamespace
 version = "unspecified"
@@ -19,23 +19,6 @@ kotlin {
             kotlinOptions {
                 jvmTarget = "1.8"
             }
-        }
-    }
-
-    sourceSets {
-        commonMain.dependencies {
-            implementation(project(":emulator:api"))
-
-            implementation(libs.koin.core)
-
-            implementation(project(":core-utils-api"))
-            implementation(project(":emulator:memory:api"))
-            implementation(project(":emulator:memory:impl"))
-        }
-        androidMain.dependencies {
-            implementation(libs.koin.android)
-            implementation(libs.koin.android.compat)
-            implementation(libs.kotlinx.coroutines.android)
         }
     }
 }

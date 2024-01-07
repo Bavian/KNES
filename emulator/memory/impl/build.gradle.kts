@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.androidLibrary)
 }
 
-val emulatorNamespace = "com.bavian.knes.emulator.impl"
+val emulatorNamespace = "com.bavian.knes.emulator.memory.impl"
 
 group = emulatorNamespace
 version = "unspecified"
@@ -24,13 +24,9 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            implementation(project(":emulator:api"))
+            implementation(project(":emulator:memory:api"))
 
             implementation(libs.koin.core)
-
-            implementation(project(":core-utils-api"))
-            implementation(project(":emulator:memory:api"))
-            implementation(project(":emulator:memory:impl"))
         }
         androidMain.dependencies {
             implementation(libs.koin.android)
