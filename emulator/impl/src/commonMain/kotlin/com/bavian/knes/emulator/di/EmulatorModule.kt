@@ -2,6 +2,7 @@ package com.bavian.knes.emulator.di
 
 import com.bavian.knes.emulator.EmulatorInteractorImpl
 import com.bavian.knes.emulator.api.EmulatorInteractor
+import com.bavian.knes.emulator.memory.impl.di.EmulatorMemoryModule
 import com.bavian.knes.emulator.parser.RomParser
 import com.bavian.knes.emulator.parser.RomParserImpl
 import com.bavian.knes.emulator.parser.header.NesParser
@@ -26,6 +27,10 @@ import org.koin.dsl.module
 
 @Suppress("FunctionName")
 fun EmulatorModule() = module {
+    includes(
+        EmulatorMemoryModule(),
+    )
+
     factoryOf(::EmulatorInteractorImpl) bind EmulatorInteractor::class
 
     factoryOf(::RomParserImpl) bind RomParser::class

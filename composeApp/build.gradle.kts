@@ -54,6 +54,7 @@ kotlin {
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
             implementation(libs.kotlinx.coroutines.core.jvm)
+            implementation(libs.kotlinx.coroutines.swing)
         }
         jsMain.dependencies {
             implementation(compose.runtime)

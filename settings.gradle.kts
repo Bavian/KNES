@@ -24,3 +24,4 @@ dependencyResolutionManagement {
 include(":composeApp")
 include(":core-utils-api", ":core-utils-impl")
 include(":emulator:api", ":emulator:impl")
+include(":emulator:memory:api", ":emulator:memory:impl")
